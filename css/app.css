@@ -1,0 +1,273 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*
+ * style for the header
+ */
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font: 300;
+    font-style: italic;
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 80%;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 3.6rem;
+    width: 3.6rem;
+    margin: 0.2rem;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+
+}
+
+.deck .card.open {
+    transform: rotateY(180deg);
+    transition-duration: 0.5s;
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+    
+}
+
+.deck .card.match {
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 75%;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.timer {
+    display: inline;
+    list-style: none;
+    margin-right: 10px;
+}
+
+/*
+ * Styles for the Modal
+ */
+
+.modal-bg {
+    display: none;
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    min-height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+h2 {
+    padding: 30px 0 30px 0;
+    font-style: italic;
+    margin: 40px 0 20px 0;
+    font-size: 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.result {
+    margin-bottom: 40px;
+}
+
+p {
+    font-style: italic;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 500;
+}
+
+button {
+    display: block;
+    margin: auto;
+    font-style: italic;
+    font-weight: 700;
+    width: 50%;
+    min-height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.close {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    font-size: 2.5em;
+}
+
+/*
+ * Responsiveness using Media Query
+ */
+
+@media screen and (max-width: 320px) {
+    .deck .card {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .timer,
+    .star {
+        display: block;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 765px) {
+    .deck {
+        width: 661px;
+        max-height: 660px;
+        padding: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .deck .card {
+        width: 125px;
+        height: 125px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .score-panel {
+        max-width: 660px;
+        font-size: 2em;
+    }
+
+    .modal-content {
+        max-width: 704px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button {
+        width: 200px;
+        max-height: 50px;
+        font-size: 20px;
+    }
+}
