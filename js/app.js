@@ -168,21 +168,20 @@ const match = function() {
 //This is run when the two cards in the list array don't match
 const unmatch = function() {
 	setTimeout(function() {
-		list[0].classList.remove('open', 'show', 'disable', 'unmatch');
-		list[1].classList.remove('open', 'show', 'disable', 'unmatch');
+		list[0].classList.remove('open', 'show', 'disable');
+		list[1].classList.remove('open', 'show', 'disable');
+
+		enableDeck();
 		list = [];
-	}, 500);
-
-	enableDeck();
+	}, 500);//the setTimeout delays the function from occuring till after 0.5sec	
 };
-
 
 //function to display card's symbol
 const displayCard = function(evt) {
 	let clicked = evt.target;
 	if (clicked.nodeName === 'LI') {
 		//start timer
-		clickCounter++;
+		clickCounter++;//the if statement ensures that the timer starts only after the first click
 		if(clickCounter === 1) {
 			startTimer();
 		}
@@ -197,7 +196,7 @@ const displayCard = function(evt) {
 				if (list[0].innerHTML === list[1].innerHTML) {
 					match();
 				} else {
-					unmatch();
+					unmatch();	
 				}
 			}
 
@@ -214,6 +213,9 @@ const reset = function() {
 	for(const each of star) {
 		each.removeAttribute('style');
 	}
+
+	//clear the list of clicked cards
+	list = [];
 
 	//reset cards
 	for(const card of cards) {
@@ -253,3 +255,5 @@ close.addEventListener('click', closeModal);
 
 //listen for a click on the play again button
 button.addEventListener('click', closeModal);
+
+
