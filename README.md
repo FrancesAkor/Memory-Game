@@ -19,7 +19,7 @@ The Memory Game is a game that challenges your retentive ability. It comprises o
 
 ## Dependencies
 
-The icons and the write-ups in this game are dependent on Bootstrap version 4.6.1 and Google fonts respectively. In addition, the layout of the game was done using flexbox while its responsiveness was improved using media query.
+The icons and the write-ups in this game are dependent on Bootstrap font awesome version 4.6.1 and Google fonts respectively. In addition, the layout of the game was done using flexbox while its responsiveness was improved using media query.
 
 ## Link to Live Page
 
