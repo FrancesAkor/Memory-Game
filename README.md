@@ -16,6 +16,10 @@ The Memory Game is a game that challenges your retentive ability. It comprises o
 * While you unveil the cards, ensure you commit to memory the positions of the different icons
 * Match the icons with less number of moves and in less time
 
+## Dependencies
+
+The icons and the write-ups in this game are dependent on Bootstrap version 4.6.1 and Google fonts respectively. In addition, the layout of the game was done using flexbox while the responsiveness was improved using media query.
+
 ## Link to Live Page
 
 Interested in improving your retentive memory? click [here](https://francesakor.github.io/Memory-Game/)
