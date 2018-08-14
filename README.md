@@ -4,6 +4,7 @@
 
 * [About](#About)
 * [How to Play](#Howtoplay)
+* [Dependencies](#Dependencies)
 * [Link To Live Page](#linktolivepage)
 
 ## About
